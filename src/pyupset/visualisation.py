@@ -378,7 +378,7 @@ class UpSetPlot():
         label_vertical_gap = (ylim[1] - ylim[0]) / 60
 
         for x, y in zip(self.x_values, inters_sizes):
-            ax.text(x, y + label_vertical_gap, "%.2g" % y,
+            ax.text(x, y + label_vertical_gap, "%.5g" % y,
                     rotation=90, ha='center', va='bottom')
 
         ax.ticklabel_format(style='sci', axis='y', scilimits=(0, 4))
