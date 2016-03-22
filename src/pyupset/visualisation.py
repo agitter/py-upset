@@ -9,8 +9,8 @@ from functools import partial
 from matplotlib.patches import Rectangle, Circle
 
 
-def plot(data_dict, *, unique_keys=None, sort_by='size', inters_size_bounds=(0, np.inf),
-         inters_degree_bounds=(1, np.inf), additional_plots=None, query=None):
+def plot(data_dict, unique_keys=None, sort_by='size', inters_size_bounds=(0, np.inf),
+         inters_degree_bounds=(1, np.inf), additional_plots=None, query=None, *args):
     """
     Plots a main set of graph showing intersection size, intersection matrix and the size of base sets. If given,
     additional plots are placed below the main graph.
@@ -442,7 +442,7 @@ class UpSetPlot():
             ax.scatter(np.repeat(self.x_values[col_num], len(out_y)), out_y, color=self.greys[0], s=300)
             ax.vlines(self.x_values[col_num], min(in_y), max(in_y), lw=3.5, color=self._color_for_query(frozenset(in_sets)))
 
-    def additional_plot(self, ax_index, kind, data_values, graph_args, *, labels=None):
+    def additional_plot(self, ax_index, kind, data_values, graph_args, labels=None, *args):
         """
         Scatter plot (for additional plots).
 
