@@ -12,6 +12,8 @@ A pure-python implementation of the UpSet suite of visualisation methods by Lex,
 
 [Upcoming changes](#upcomingchanges)
 
+[Simple self-contained example](http://nbviewer.jupyter.org/github/agitter/py-upset/blob/master/pyUpSet_demo.ipynb)
+
 ## <a id='purpose'></a>Purpose
 The purpose of this package is to statically reproduce some of the visualisations that can be obtained through the 
 [UpSet tool of Lex, Gehlenborg et al.](http://vcg.github.io/upset/about/#)
