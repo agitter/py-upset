@@ -35,7 +35,9 @@ def plot(data_dict, unique_keys=None, sort_by='size', inters_size_bounds=(0, np.
 
     :param query: list of tuples. See below for details.
 
-    :return: dictionary of matplotlib objects, namely the figure and the axes.
+    :return: dictionary of matplotlib objects, namely the figure and the axes, and
+    an array of int (sizes), array of tuples (sets included in intersection), array of tuples (sets
+    excluded from intersection), all filtered and sorted.
 
     :raise ValueError: if no unique_keys are specified and the data frames have no common column names.
 
@@ -75,7 +77,7 @@ def plot(data_dict, unique_keys=None, sort_by='size', inters_size_bounds=(0, np.
         ax = upset.additional_plot(i, plot_kind, data_values, graph_properties, labels=data_vars)
         fig_dict['additional'].append(ax)
 
-    return fig_dict
+    return (fig_dict, ordered_inters_sizes, ordered_in_sets, ordered_out_sets)
 
 
 def __get_all_common_columns(data_dict):
